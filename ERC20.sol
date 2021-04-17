@@ -95,11 +95,11 @@ contract ERC20 is IERC20 {
     string private _symbol;
     uint8 private _decimals;
 
-    constructor (string memory name_, string memory symbol_, uint8 decimals_, uint256 totalSupply_) public {
+    constructor (string memory name_, string memory symbol_, uint8 decimals_, uint256 amount_) public {
         _name = name_;
         _symbol = symbol_;
         _decimals = decimals_;
-        _mint(msg.sender, totalSupply_ * (10 ** uint256(_decimals))); 
+        _mint(msg.sender, amount_ * (10 ** uint256(_decimals))); 
     }
 
     function name() public view returns (string memory) {
